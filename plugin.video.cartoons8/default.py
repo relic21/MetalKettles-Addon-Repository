@@ -99,7 +99,7 @@ def SEARCH():
 
 def PLAYLINK(name,url):
         link = open_url(url)
-        match=re.compile('rel="nofollow" href="(.+?)">.+?mp4</a>').findall(link)[0]    
+        match=re.compile("var txha = '(.+?)';").findall(link)[0]    
         playlist = xbmc.PlayList(1)
         playlist.clear()
         listitem = xbmcgui.ListItem(name, iconImage=icon, thumbnailImage=icon)
